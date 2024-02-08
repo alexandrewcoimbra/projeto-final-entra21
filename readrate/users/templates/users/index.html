@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+{% block head %}    
+    <link rel="stylesheet" href="{% static 'users/css/users.css' %}" />
+{% endblock %}
+{% block content %}
+    <div class="container">
+    <div class="login-container">
+        <img src="{% static 'users/img/logo.png' %}" alt="ReadRate Logo" class="logo"> <!-- Replace path_to_logo.png with the actual path to the logo image -->
+        <h2 class="text-center">Login de Usuário</h2>
+        <br>
+        <form method='post' class="login-form">
+            {% csrf_token %}
+            <input name='username'type="text" class="form-control" placeholder="Nome de Usuário" required id="id_username">
+            <br>
+            <input name='password' type="password" class="form-control" placeholder="Senha" required id="id_password">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+            <div class="text-center mt-3">
+                <a href="{% url "users:register" %}">Usuário Novo? Crie uma conta aqui.</a>
+            </div>
+        </form>
+    </div>
+    </div>
+{% endblock %}

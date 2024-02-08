@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}Login{% endblock %}
+{% block head %}    
+    <link rel="stylesheet" href="{% static 'users/css/users.css' %}" />
+{% endblock %}
+{% block content %}
+{% with create_url="/usuarios/cadastro/" %}
+    <div class="container">
+        <img src="{% static 'users/img/logo.png' %}" alt="ReadRate Logo" class="logo">
+        <h2 class="text-center">Criação de usuário</h2>
+        <form action="{{ form_action }}" method='post' id="registrationForm" novalidate>
+            {% csrf_token %}
+            <div class="form-group">
+                {{form.username|as_crispy_field}}
+            </div>
+            <div class="form-group">
+                {{form.email|as_crispy_field}}
+            </div>
+            <div class="form-group">
+                {{form.password|as_crispy_field}}
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Criar</button>
+        </form>
+    </div>
+{% endwith %}
+{% endblock %}
