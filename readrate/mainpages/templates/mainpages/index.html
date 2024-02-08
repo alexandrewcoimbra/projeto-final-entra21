@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Página Principal{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'users/css/users.css' %}" /> 
+{% endblock  %}
+
+{% block content %}
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="path-to-your-logo.png" width="30" height="30" alt="ReadRate Logo">
+      ReadRate
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">New Releases</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Top Rated</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Genres</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Community</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Main Content Area -->
+  <div class="container mt-3">
+    <!-- Featured News Section -->
+    <div class="row mb-3">
+      <div class="col-12">
+        <h2>Latest News</h2>
+        <!-- News articles go here -->
+      </div>
+    </div>
+  
+    <!-- Current Top Books Section -->
+    <div class="row mb-3">
+      <div class="col-12">
+        <h2>Top Books Right Now</h2>
+        <!-- Book cards go here -->
+      </div>
+    </div>
+  
+    <!-- Other Content Sections -->
+    <!-- Add more sections as needed -->
+  </div>
+  
+  <!-- Footer -->
+  <footer class="bg-dark text-light text-center p-3">
+    <p>ReadRate © 2024. All rights reserved.</p>
+  </footer>
+
+{% endblock  %}
+
+
+
+
+
