@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Gêneros
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container mt-3">
+    <!-- Featured News Section -->
+    <div class="row mb-3">
+      <div class="col-12">
+        <h2 class="mb-3">Gêneros</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>Gênero</th>
+                        </tr>
+                    </thead>    
+                <tbody>
+                {% for genre in genres  %}
+                <td>
+                    {{genre.name}}
+                </td>
+                {% endfor %}
+        <!-- News articles go here -->
+      </div>
+    </div>
+
+{% endblock  %}

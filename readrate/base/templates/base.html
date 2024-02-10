@@ -7,7 +7,7 @@
 <title>ReadRate - {% block title %}{% endblock %}</title>
 <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-<link rel="stylesheet" href="{% static 'base/css/base.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/users.css' %}" />
 
 <script src="{% static 'base/js/bootstrap.min.js' %}"></script>
 <script src="{% static 'base/js/jquery-3.7.1.min.js' %}"></script>
@@ -18,7 +18,56 @@
 </head>
 
 <body>
-    {% block content %}{% endblock %} 
+    
+    <div class="content">
+        {% block content %}
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'users/img/logo.png' %}" alt="ReadRate Logo" class="logo">
+            ReadRate
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto align-items-center">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(Atual)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Lançamentos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Mais bem avaliados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Gêneros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Comunidade</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        {% endblock %} 
+    </div>
+
+
+
+    {% block footer %}
+
+    <footer class="bg-dark text-light text-center p-3">
+  
+      <p>ReadRate © 2024. Todos os direitos reservados.</p>
+  
+    </footer>
+  
+    {% endblock %}
+
 </body>
+
+
 
 </html>

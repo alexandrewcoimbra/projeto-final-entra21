@@ -24,3 +24,35 @@ body {
   .btn-primary:hover {
     background-color: #e31b42;
   }
+
+  body {
+    position: relative;
+    padding-bottom: 60px; /* Ajuste conforme a altura do seu rodapé */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+html {
+
+  height: 100%;
+}
+
+footer {
+
+  padding-top: 1000px;
+
+}
+
+/* Diminuir e centralizar a logo */
+.navbar .logo {
+  height: 50px; /* Ajuste para o tamanho desejado */
+  width: auto; /* Mantém a proporção da imagem */
+}
+
+/* Centralizar itens na navbar */
+.navbar-nav {
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente se estiver usando flex */
+}
