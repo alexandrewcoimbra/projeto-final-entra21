@@ -6,7 +6,7 @@ from django.core.paginator import Paginator
 
 def index(request):
     
-    books = Livro.objects.order_by('nome')
+    books = Livro.objects.order_by('titulo')
     
     paginator = Paginator(books, 100)
 
@@ -19,4 +19,9 @@ def index(request):
 
 def show_book(request, slug):
         book = get_object_or_404(Livro, slug=slug)
-        return render(request, "books/index.html")
+
+        context = {
+              'book': book
+        }
+
+        return render(request, "books/showbook.html", context)

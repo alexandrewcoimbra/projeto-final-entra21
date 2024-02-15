@@ -15,3 +15,5 @@ def index(request):
 
     return render(request, "genres/index.html", context)
 
+def show_gender_books(request):
+    pass

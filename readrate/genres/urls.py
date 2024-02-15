@@ -4,8 +4,5 @@ from . import views
 app_name = "genres"
 urlpatterns = [
     path("", views.index, name="index"),
-    # path("usuarios/cadastro/", views.create, name="register"),
-    # path("login/", views.login, name="login"),
-    # path("usuarios/<str:username>/", views.update, name="update"),
-    # path("usuarios/<int:id>/", views.delete, name="delete")
+    path("<nome:nome:>/", views.show_gender_books, name="booksbygender")
 ]

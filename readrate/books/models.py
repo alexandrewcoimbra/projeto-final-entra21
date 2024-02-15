@@ -9,6 +9,8 @@ class Livro(models.Model):
     numero_paginas = models.IntegerField()
     descricao = models.CharField(max_length=256)
     genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
+    imagem = models.ImageField(upload_to='media/', blank=True, null=True)  # Adicionando campo de imagem
+
 
 class Nota(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}
-    Livros
+    Gêneros
 {% endblock %}
 
 {% block content %}
@@ -10,26 +10,22 @@
 <div class="container mt-3">
     <div class="row mb-3">
         <div class="col-12">
-            <h2 class="mb-3">Livros</h2>
+            <h2 class="mb-3">Gêneros</h2>
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
-                                <th>Nome do Livro</th>
-                                <th>Link para o livro</th>
+                                <th>Gênero</th>
                             </tr>
                         </thead>    
                         <tbody>
-                            {% for book in books  %}
-                                <tr>
-                                    <td>
-                                        {{book.titulo}}
-                                    </td>
-                                    <td>
-                                        <a href="{% url 'showbook' book.slug %}">Ver detalhes do livro</a>
-                                    </td>
-                                </tr>
+                            <tr>
+                            {% for genre in genres  %}
+                                <td>
+                                    {{genre.nome}}
+                                </td>
                             {% endfor %}
+                            </tr>
                         </tbody>
                     </table>
                 </div>
