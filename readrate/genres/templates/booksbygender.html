@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Livros do gênero {{genre.nome}}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Livros do gênero "{{ genre.nome }}"</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Nome do Livro
+                </th>
+                <th>
+                    Autor
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>
+                    {{ book.titulo }}
+                </td>
+                <td>
+                    {{ book.author }}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

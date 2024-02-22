@@ -1,9 +1,11 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from .models import Livro
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required
 def index(request):
     
     books = Livro.objects.order_by('titulo')
@@ -17,6 +19,7 @@ def index(request):
 
     return render(request, "books/index.html", context)
 
+@login_required
 def show_book(request, slug):
         book = get_object_or_404(Livro, slug=slug)
 
