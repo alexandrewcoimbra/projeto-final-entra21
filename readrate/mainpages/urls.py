@@ -1,5 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+from books.views import BooksSearchView
 
 app_name = "mainpages"
 urlpatterns = [

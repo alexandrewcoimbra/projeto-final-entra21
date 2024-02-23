@@ -1,0 +1,4 @@
+<form method="get" action="{% url 'books:search' %}" class="d-flex">
+    <input value="{{ request.GET.q }}" class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="q">
+    <button class="btn btn-outline-success" type="submit">Go</button>
+</form>

@@ -34,10 +34,7 @@
         </ul>
 
         {% comment %} Search field {% endcomment %}
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Go</button>
-        </form>
+        {% include "partials/_search_field.html" with search_url='books:search' %}
       </div>
     </div>
   </nav>
