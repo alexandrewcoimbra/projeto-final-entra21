@@ -16,6 +16,7 @@
                         <thead>
                             <tr>
                                 <th>Gênero</th>
+                                <th>Ver detalhe do gênero</th>
                             </tr>
                         </thead>    
                         <tbody>
@@ -23,6 +24,9 @@
                             {% for genre in genres  %}
                                 <td>
                                     {{genre.nome}}
+                                </td>
+                                <td>
+                                    <a href="{% url 'booksbygender' gender.nome %}">Ver detalhes do gênero</a>
                                 </td>
                             {% endfor %}
                             </tr>

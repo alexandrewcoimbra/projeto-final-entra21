@@ -51,7 +51,7 @@ def login_view(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('users:register')  # Redirecione para a URL desejada após o login
+                return redirect('mainpages:index')  # Redirecione para a URL desejada após o login
             else:
                 return HttpResponse("Usuário ou senha inválidos.")
         else:
