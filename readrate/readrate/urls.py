@@ -21,5 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('books/', include('books.urls')),
     path('', include('users.urls')),
-    path('main/', include('mainpages.urls'))
+    path('main/', include('mainpages.urls')),
+    
+    # Path to connect the search field to the book app
+    path("books/", include("books.urls")),
 ]

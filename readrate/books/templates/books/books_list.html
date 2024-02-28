@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Pesquisa{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <div class="row my-3">
+            <div class="col">
+                <h2>Resultados da pesquisa: <span class="fw-normal  text-primary">{{ search }}</span></h2>
+                
+            </div>
+        </div>
+
+        <div class="row my-3">
+            {% if books %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            {% for book in books %}
+                                <ul class="list-group mb-3">
+                                    {% comment %} Title {% endcomment %}
+                                    <li class="list-group-item list-group-item-dark">
+                                        <a href="{% url "books:info" slug=book.slug %}" class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover">
+                                            <h3 class="fs-5">{{ book.titulo }}</h3>
+                                        </a>
+                                    </li>
+                                    
+                                    {% comment %} Book thumbnail {% endcomment %}
+                                    <li class="list-group-item">
+                                        <a href="{% url "books:info" slug=book.slug %}" class="link-dark link-underline-opacity-0 link-underline-opacity-75-hover">
+                                            <img src="https://via.placeholder.com/150x250" class="img-fluid rounded float-start mt-2 ms-2">
+                                        </a>
+
+                                        {% comment %} Data content {% endcomment %}
+                                        <ul class="list-group">
+                                            {% comment %} Authors {% endcomment %}
+                                            <li class="list-group-item d-flex mx-3">
+                                                {% if book.autores.all|length > 1 %}
+                                                <h4 class="fs-6">Autores: </h4>
+                                                {% else %}
+                                                    <h4 class="fs-6">Autor: </h4>
+                                                {% endif %}
+                                                
+                                                {% for autor in book.autores.all %}
+                                                    {% if forloop.last %}
+                                                        <div class="mx-1">
+                                                            {{ autor }}.
+                                                        </div>
+                                                    {% else %}
+                                                        <div class="mx-1">
+                                                            {{ autor }}, 
+                                                        </div>
+                                                    {% endif %}
+                                                    
+                                                {% endfor %}
+                                            </li>
+
+                                            {% comment %} Genres {% endcomment %}
+                                            <li class="list-group-item d-flex mx-3">
+                                                {% if book.generos.all|length > 1 %}
+                                                <h4 class="fs-6">Gêneros: </h4>
+                                                {% else %}
+                                                    <h4 class="fs-6">Gênero: </h4>
+                                                {% endif %}
+                                                
+                                                {% for genre in book.generos.all %}
+                                                    {% if forloop.last %}
+                                                        <div class="mx-1">
+                                                            {{ genre }}.
+                                                        </div>
+                                                    {% else %}
+                                                        <div class="mx-1">
+                                                            {{ genre }}, 
+                                                        </div>
+                                                    {% endif %}
+                                                    
+                                                {% endfor %}
+                                            </li>
+
+                                            {% comment %} Page count {% endcomment %}
+                                            <li class="list-group-item d-flex mx-3">
+                                                <h4 class="fs-6">Páginas: </h4>
+                                                <div class="mx-1">
+                                                    {{ book.numero_paginas }}
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                </ul>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                Sentimos muito, nenhum livro com estes parâmetros foi encontrado.
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}
